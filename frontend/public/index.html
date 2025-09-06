@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tradutor Assíncrono</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Tradutor Assíncrono com Microsserviços</h1>
+      <form id="translation-form">
+        <div class="language-select">
+          <div class="select-wrapper">
+            <select id="source-language">
+              <option value="pt">Português</option>
+              <option value="en" selected>Inglês</option>
+              <option value="es">Espanhol</option>
+              <option value="fr">Francês</option>
+            </select>
+          </div>
+          <span class="arrow-icon">→</span>
+          <div class="select-wrapper">
+            <select id="target-language">
+              <option value="pt" selected>Português</option>
+              <option value="en">Inglês</option>
+              <option value="es">Espanhol</option>
+              <option value="fr">Francês</option>
+            </select>
+          </div>
+        </div>
+        <textarea
+          id="text-to-translate"
+          placeholder="Digite o texto para traduzir..."
+        ></textarea>
+        <button type="submit">Traduzir</button>
+      </form>
+
+      <div id="results-area">
+        <h2>Resultados</h2>
+        <div id="status-container" class="hidden">
+          <p>
+            <strong>ID da Requisição:</strong> <span id="request-id"></span>
+          </p>
+          <p><strong>Status:</strong> <span id="status-text"></span></p>
+          <p><strong>Texto Traduzido:</strong></p>
+          <div id="translated-text" class="result-box"></div>
+        </div>
+        <p id="error-message" class="hidden error"></p>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
